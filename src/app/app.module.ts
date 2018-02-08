@@ -8,6 +8,9 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import {LoginPageModule} from "../pages/login/login.module";
+import { NovaServiceProvider } from '../providers/nova-service/nova-service';
+import {HttpClient} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -17,6 +20,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
+    LoginPageModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -27,8 +31,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   providers: [
     StatusBar,
+    HttpClient,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    NovaServiceProvider
   ]
 })
 export class AppModule {}
