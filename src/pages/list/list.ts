@@ -45,7 +45,7 @@ this.displayContent();
     this.service.getContent()
       .then(data => {
         this.content= data;
-        console.log(JSON.stringify(this.content));
+        // console.log(JSON.stringify(data));
 
       });
   }
